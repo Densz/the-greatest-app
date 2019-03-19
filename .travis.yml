@@ -5,6 +5,8 @@ services:
 
 before_install:
   - docker build -t dzheng42/the-greatest-app -f Dockerfile.dev .
+
+script:
   - docker run dzheng42/the-greatest-app npm run test -- --coverage
 # deploy:
 #   provider: elasticbeanstalk
