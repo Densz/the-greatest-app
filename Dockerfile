@@ -6,4 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+# EXPOSE PORT 80 only for AWS Beanstalk
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
