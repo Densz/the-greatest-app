@@ -5,6 +5,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+#To serve the static website
 FROM nginx
 # EXPOSE PORT 80 only for AWS Beanstalk
 EXPOSE 80
