@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run dzheng42/the-greatest-app npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-3'
+  app: 'the-greatest-app'
+  env: 'TheGreatestApp-env'
+  bucket_name: 'elasticbeanstalk-eu-west-3-970800721028'
+  bucket_path: 'the-greatest-app'
+  on:
+    branch: master
